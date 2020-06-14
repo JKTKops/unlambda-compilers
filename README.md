@@ -15,7 +15,10 @@ this repository. It emits a bytecode which is implemented in C as macros, which 
 executable C code. The key difference is that the output C code is not capable of executing a different Unlambda program
 if it were presented as bytecode; an interpreter would be able to interpret arbitrary bytecode programs.
 
-More writing about the implementation, complications with compiliing Unlambda, and the solutions used here will
+The POC compiler does a compilation via a very simple and slightly extended dialect of Scheme. The
+scheme compiler is, for the most part, a Haskell port of the 90-minute Scheme Compiler.
+
+More writing about the implementation, complications with compiling Unlambda, and the solutions used here will
 follow. For now, note that the simple POC compiler here currently does not have a garbage collector and has a
 fixed heap size, so nontrivial Unlambda programs (especially those using church numerals) will likely run out of
 heap space and segfault quickly.
