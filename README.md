@@ -1,6 +1,6 @@
 # Unlambda-Compilers
 
-The Unlambda home page leaves off an as-yet unanswered question: Can Unlambda Be Compiled?
+The Unlambda home page leaves off with a formerly unanswered question: Can Unlambda Be Compiled?
 
 At this point, we must make an important distinction between compilation and interpretation. For our purposes,
 "interpreting" a program means to create a representation of the original program as data, and then have a function,
@@ -24,3 +24,5 @@ More writing about the implementation, complications with compiling Unlambda, an
 follow. For now, note that the simple POC compiler here currently does not have a garbage collector and has a
 fixed heap size, so nontrivial Unlambda programs (especially those using church numerals) will likely run out of
 heap space and segfault quickly.
+
+With that, I believe we have a positive answer: Unlambda can be compiled!
