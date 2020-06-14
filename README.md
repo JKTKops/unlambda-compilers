@@ -7,8 +7,10 @@ At this point, we must make an important distinction between compilation and int
 `interpret : ProgramAsData -> Result`, which executes the representation of the program. Notice that this is
 distinct from translating the program into _native_ executable code of the target language.
 
-Previous efficient Unlambda implementations (such as `mendelson-unlambda.c` [here](ftp://ftp.madore.org/pub/madore/unlambda/contrib/) or [ReLambda](https://github.com/MattX/relambda)) compile Unlambda to a "bytecode." A representation of
-this bytecode is captured as data and then interpreted (by C or by Rust respectively).
+Previous efficient Unlambda implementations such as `mendelson-unlambda.c`, which can be found on the Unlambda
+Homepage (GitHub MarkDown won't render links to FTP repositories), and [ReLambda](https://github.com/MattX/relambda) 
+compile Unlambda to a "bytecode." A representation of this bytecode is captured as data and then 
+interpreted (by C or by Rust respectively).
 
 The compilers presented here do not work this way. For now, only one of them is publically available via 
 this repository. It emits a bytecode which is implemented in C as macros, which themselves expand into 
