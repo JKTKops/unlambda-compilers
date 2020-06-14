@@ -70,8 +70,7 @@ unlDefines = map (second $ head . quoteScheme)
         \  (apply (apply x z) (apply y z))))))")
     -- Implicit promise forcing combined with d having a well-defined
     -- identity function closure means we don't need 'apply' here.
-  , (C, "(define c (lambda (f) (call/cc (lambda (k) (f k)))))\
-        \  (define d (lambda (x) x))")
+  , (C, "(define c (lambda (f) (call/cc (lambda (k) (f k)))))")
   , (D, "(define d (lambda (x) x))")
   , (E, "(define e (lambda (x) (exit x)))")
   ]
@@ -85,7 +84,7 @@ unlDefines = map (second $ head . quoteScheme)
 -- Note that if `d` isn't used, we can also omit 'apply' everywhere.
 unlFvs :: Unlambda -> [Unlambda]
 unlFvs (UnlApp f g) = unlFvs f ++ unlFvs g
-unlFvs (Dot _)      = [] -- defined via a macro, so a define is never needed
+unlFvs (Dot _)      = [] -- defined via a macro, so a Scheme define is never needed
 unlFvs f            = [f]
 
 -- This version of the runtime doesn't support ?x, @, or |, but they
