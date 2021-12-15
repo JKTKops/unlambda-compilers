@@ -1,0 +1,17 @@
+# Tests that `cd => `d<cont> behaves correctly (that is; like `ci)
+# by considering the simple ``cir program. This program evaluates as
+#   ``cir
+#   `<cont>r
+#   `rr
+#   r [and printed newline]
+# Similarly;
+#   ``cdr
+#   ``d<cont>r
+#   `<cont>r
+#   `rr
+#   r [and printed newline]
+# For clarity, we're using a function that prints "yay!" instead of r.
+# That function is `d```.y.a.y.!, which becomes ````.y.a.y.!X when
+# supplied an argument X, and otherwise does not print anything.
+
+``cd`d```.y.a.y.!
